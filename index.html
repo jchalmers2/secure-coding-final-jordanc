@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>User Registration Form</h1>
+
+<form action="https://httpbin.org/post" method="POST" id="registrationForm">
+
+    <fieldset>
+        <legend>Basic Information</legend>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error" id="nameError"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error" id="emailError"></span>
+    </fieldset>
+
+    <fieldset>
+        <legend>Choices</legend>
+
+        <label>What is your favorite breakfast food?</label>
+        <input type="radio" id="eggs" name="breakfast" value="eggs" required>
+        <label for="eggs">Eggs</label>
+        <input type="radio" id="pancakes" name="breakfast" value="pancakes">
+        <label for="pancakes">Pancakes</label>
+        <input type="radio" id="waffles" name="breakfast" value="waffles">
+        <label for="waffles">Waffles</label>
+        <span class="error" id="breakfastError"></span>
+
+        <label>Which meal is better?</label>
+        <input type="checkbox" id="breakfastChoice" name="meal" value="breakfast">
+        <label for="breakfastChoice">Breakfast</label>
+        <input type="checkbox" id="lunchChoice" name="meal" value="lunch">
+        <label for="lunchChoice">Lunch</label>
+        <input type="checkbox" id="dinnerChoice" name="meal" value="dinner">
+        <label for="dinnerChoice">Dinner</label>
+        <span class="error" id="mealError"></span>
+    </fieldset>
+
+    <fieldset>
+        <legend>Additional Information</legend>
+
+        <label for="username">Username (alphanumeric only):</label>
+        <input type="text" id="username" name="username" pattern="[A-Za-z0-9]+" required>
+        <span class="error" id="usernameError"></span>
+
+        <label for="dob">Date of Birth (DD-MM-YYYY):</label>
+        <input type="text" id="dob" name="dob" pattern="(0[1-9]|[12][0-9]|3[01])-(0[1-9]|1[0-2])-[0-9]{4}" required>
+        <span class="error" id="dobError"></span>
+
+        <label for="customId">Custom ID (Format: ABC-1234):</label>
+        <input type="text" id="customId" name="customId" pattern="[A-Z]{3}-[0-9]{4}" required>
+        <span class="error" id="customIdError"></span>
+
+        <label for="datePicker">Date Picker:</label>
+        <input type="date" id="datePicker" name="datePicker" required>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    </fieldset>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script src="validation.js"></script> <!-- Link to external JavaScript file -->
+
+</body>
+</html>
